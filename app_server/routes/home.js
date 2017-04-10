@@ -21,5 +21,6 @@ router.get('/getAllResults2', ctrlActivity.getAllResults2);
 router.get('/userInputs/:username', ctrlActivity.findUserInputs);
 router.get('/findbyid/:userInputsId', ctrlActivity.findIdUserInputs);
 router.get('/getAllUserInputs2', ctrlActivity.getAllUserInputs);
+router.get('/createActivity', ctrlActivity.activityIdAddOne);
 
 module.exports = router;

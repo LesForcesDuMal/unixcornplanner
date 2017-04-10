@@ -21,6 +21,45 @@ module.exports.findIdResults = function(req, res){
     });
 };
 
+
+
+module.exports.activityIdAddOne = function(req, res) {
+  console.log("POST new food");
+
+  console.log('req params food' , req.params, req.body);
+//think it can either be insert or create, both work
+//req.body.food
+  activityResults
+    .insert({ 
+   name: req.body.name,
+   price: req.body.price,
+   distance: req.body.distance,
+   rate: req.body.rate,
+   location: req.body.location,
+   transportation: req.body.transportation,
+   genre: req.body.genre,
+   duration: req.body.duration,
+   time: req.body.time
+}, function(err, foodItem) {
+      if (err) {
+        console.log("can't create faculty");
+        res
+          .status(400)
+          .json(err);
+      } else {
+        console.log("Job done", foodItem);
+        res
+          .status(201)
+          .json(foodItem);
+      }
+    });
+};
+
+
+
+
+
+
 module.exports.getAllResults = function(req, res) {
   activityResults
     .find()    //exec tells to execute query 
